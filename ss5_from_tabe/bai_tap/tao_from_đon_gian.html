@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tạo from đơn giản </title>
+</head>
+<body>
+   <h3 style="background: #ff4c00; color: white"> Sở thích của bạn </h3>
+   <br>
+   <br>
+   <form action="http://demo.codegym.vn/6/registration_form/register.php" method="post">
+       <label> Họ và tên </label>
+       <input type="text" name="ho va ten">
+       <br>
+       <br>
+
+       <label> Email</label>
+       <input type="email"  name="email" >
+       <br>
+       <br>
+       <label> Sở thích</label> <br>
+
+       <div class=" sở thích">
+          <input type="checkbox" name="thethao" value="hobby">
+          <label> Thể thao </label>
+           <input type="checkbox" name="amnhac" value="hobby">
+          <label> Âm nhạc </label>
+           <input type="checkbox" name="docsach" value="hobby">
+           <label> Đọc sách </label> <br>
+           <input type="checkbox" name="luotwed" value="hobby">
+           <label> Lướt wed </label>
+           <input type="checkbox" name="choigame" value="hobby">
+           <label> Chơi game </label>
+           <input type="checkbox" name="dienanh" value="hobby">
+           <label> Điện ảnh  </label> <br>
+           <input type="checkbox" name="dulich" value="hobby">
+           <label> Du lịch </label>
+       </div>
+          <input type="submit" nam="dangky" value="Gửi Thông tin">
+          <input type="reset" nam="nhaplai" value="Nhập lại">
+
+   </form>
+
+</body>
+</html>
