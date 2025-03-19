@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> bài 2</title>
+</head>
+<body>
+
+<h2> chuyển đội nhiệt độ </h2>
+<label form=celsuis> Nhập độ</label>
+<input type=number name="nhap do">
+<button onclick="convertTemperature()"> chuyển đổi</button>
+<script>
+    function convertTemperature() {
+        let celsius = parseFloat(document.getElementById("celsius").value) || 0;
+        let fahrenheit = (celsius * 9/5) + 32;
+
+        document.getElementById("result").innerHTML = `${celsius.toFixed(2)}°C = ${fahrenheit.toFixed(2)}°F`;
+    }
+
+
+
+</script>
+
+</body>
+</html>
