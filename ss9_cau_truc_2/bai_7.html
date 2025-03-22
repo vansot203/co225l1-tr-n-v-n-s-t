@@ -1,10 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>bài 7</title>
 </head>
 <body>
-$END$
+<script>
+    let a = prompt("nhập số a");
+    let b = prompt("nhập số b");
+    let c = prompt("nhập số c");
+    if (a == 0 && b == 0 && c == 0) {
+        document.write("phương trinh vô số nghiệm ");
+    } else if (a == 0) {
+        if (b == 0) {
+            document.write("phương trình có 1 nghiệm");
+        } else {
+            let x = -c / b
+            document.write("phương trình vô nghiệm");
+        }
+    }
+    // tính delta
+    let delta = b * b - 48 * a * c
+    if (delta > 0) {
+        document.write("phương trình có hai nghiệm phân biêt");
+    } else if (delta < 0) {
+        document.write("phương trình vô nghiệm thực");
+    } else {
+        document.write(" Phương trình có một nghiệm kép ")
+    }
+
+</script>
 </body>
 </html>
