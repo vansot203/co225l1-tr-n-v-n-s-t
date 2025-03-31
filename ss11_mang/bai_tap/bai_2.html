@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bài 2</title>
+</head>
+<body>
+<script>
+    let arry = [20, 30, 19, 29, 10, 12, 13, 15, 16, 17];
+    let solonnhat = arry [0];
+    let vitri = 0;
+    for (let i = 0; i < arry.length; i++) {
+        if (arry[i] > solonnhat) {
+            solonnhat = arry [i];
+            vitri = [i];
+
+
+        }
+    }
+    document.writeln("số lớn nhất trong mảng phần tử là " + solonnhat + "<br>");
+    document.writeln( "vị trí của phần tử là" + vitri);
+
+
+</script>
+</body>
+</html>

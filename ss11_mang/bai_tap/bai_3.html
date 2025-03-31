@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bài 3</title>
+</head>
+<body>
+<script>
+    function mangSoNguyen() {
+        let mang = [80, 33, 64, 27, 2, 7, 12, 90, 4, 77];
+        let maxValue = mang[0];
+        let sum = mang[0];
+        for (let i = 1; i < mang.length; i++) {
+            if (mang[i] > maxValue){
+                maxValue = mang[i];
+            }
+            sum += mang[i];
+        }
+        let average = sum / mang.length;
+        document.write("Phần tử lớn nhất: " + maxValue + "<br>")
+        document.write("Giá trị trung bình: " + average.toFixed(2));
+    }
+    mangSoNguyen()
+
+
+</script>
+</body>
+</html>
