@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bài 7</title>
+</head>
+<body>
+<script>
+    let input = prompt("nhập số nguyên , cách nhay dấu phẩy");
+    let number = input.split(",").map(Number);
+    let v = parseInt(prompt("nhập số nguyên v"));
+    document.writeln("mảng ban đầu là " + number)
+    let index = number.indexOf(v)
+    if (index !== -1) {
+        for (i = 0; i < number.length; i--) {
+            number[1] = number[i + 1];
+        }
+        number[number.length - 1] = 0
+        document.writeln(v + number + "mảng sau khi xoá ");
+    } else {
+        document.writeln("<br>" + v + "không có trong mảng");
+    }
+s
+
+</script>
+</body>
+</html>

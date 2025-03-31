@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bài 5</title>
+</head>
+<body>
+<script>
+    let number = prompt("nhập số nguyên âm , cách nhau dấu phẩy");
+    let input = number.split(",");
+    document.writeln("mảng số âm đầu tiên " + input);
+    let soam = 0;
+    for (let i = 0; i < input.length; i++) {
+        if ( input[i]<0) {
+            soam++
+        }
+    }
+    document.writeln("<br>" + " số âm trong mảng là" + soam);
+
+
+</script>
+</body>
+</html>
