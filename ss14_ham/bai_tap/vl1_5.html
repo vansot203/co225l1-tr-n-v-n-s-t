@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bài 5</title>
+</head>
+<body>
+<script>
+    let input = prompt("nhập tên ngôi sao ");
+    let arry1 = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"];
+    let arry2 = ["Ursa Minor", "Taurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", "Leo"];
+
+    function chuoi(ngoisao) {
+        let index = arry1.indexOf(ngoisao);
+        if (index !== -1) {
+            return ("ngôi sao " + ngoisao + "thuộc chòm sao" + arry2[index] + ".");
+        } else {
+            return "không tìm thấy ngôi sao"
+        }
+    }
+
+    let result = chuoi(input);
+    document.writeln(result)
+</script>
+</body>
+</html>
