@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bài 3</title>
+</head>
+<body>
+<script>
+        let n =prompt("nhập số nguyên bất kì");
+    function tinhGiaiThua(n) {
+        if (n < 0) return "Không có giai thừa cho số âm";
+        let result = 1;
+        for (let i = 1; i <= n; i++) {
+            result *= i;
+        }
+        return result;
+    }
+    alert(tinhGiaiThua(n));
+
+
+</script>
+</body>
+</html>

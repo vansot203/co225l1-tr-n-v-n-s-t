@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bài 5</title>
+</head>
+<body>
+<script>
+    let a = prompt("nhập số nguyên thứ nhất");
+    let b = prompt("nhập số nguyên thứ hai ");
+    let c = prompt(" nhập số nguyên thứ ba");
+    function sosanh(a,b,c) {
+        if (a < b) {
+            if (a < c) {
+                alert("số nhỏ nhất là " + a);
+            } else {
+                alert("số nhỏ nhất là " + c)
+            }
+        }
+        else{
+            if(b<c){
+                document.writeln("số nhỏ nhất là "+ b);
+            }else{
+                document.writeln("số nhỏ nhất là"+ c);
+            }
+        }
+    }
+    sosanh(a,b,c)
+
+
+</script>
+</body>
+</html>
