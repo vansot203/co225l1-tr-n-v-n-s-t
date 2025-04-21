@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Menu</title>
+</head>
+<body>
+<script>
+    // Danh sách thức uống và đơn giá
+    let menu = [
+        { ten: "Cafe", gia: 20000 },
+        { ten: "Cam vắt", gia: 25000 },
+        { ten: "Nước ép cà rốt", gia: 30000 },
+        { ten: "Nước ép cà chua", gia: 30000 },
+        { ten: "Nước lọc", gia: 10000 },
+        { ten: "Nước dừa", gia: 25000 }
+    ];
+
+    let tongTien = 0;
+    let luaChon;
+
+    do {
+        let menuText = "Chọn thức uống:\n";
+        for (let i = 0; i < menu.length; i++) {
+            menuText += `${i + 1}. ${menu[i].ten} - ${menu[i].gia} VND\n`;
+        }
+        menuText += "7. Thoát gọi món";
+
+        luaChon = parseInt(prompt(menuText));
+
+        if (luaChon >= 1 && luaChon <= 6) {
+            let soLuong = parseInt(prompt(`Bạn đã chọn ${menu[luaChon - 1].ten}. Nhập số lượng:`));
+            let thanhTien = menu[luaChon - 1].gia * soLuong;
+            tongTien += thanhTien;
+            alert(`Bạn đã gọi ${soLuong} ly ${menu[luaChon - 1].ten}. Thành tiền: ${thanhTien} VND`);
+        } else if (luaChon !== 7) {
+            alert("Lựa chọn không hợp lệ. Vui lòng chọn lại.");
+        }
+
+    } while (luaChon !== 7);
+
+    alert("Tổng số tiền bạn cần thanh toán là: " + tongTien + " VND");
+
+</script>
+</body>
+</html>
