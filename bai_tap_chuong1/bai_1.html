@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tính lương của nhân viên</title>
+</head>
+<h2>Bảng Tính Lương Nhân Viên </h2>
+<body>
+<script>
+    let soluong = prompt("nhập số luơng của bạn");
+    let sothue = 0;
+    let thue = soluong * sothue
+    let luongrong = soluong - thue
+    function tinhluong() {
+
+        if (soluong <= 15000) {
+            sothue = 0.20;
+        } else if (soluong >= 7000) {
+            sothue = 0.10;
+        } else if (soluong < 7000) {
+            sothue = 0.05
+        } else {
+            document.write("bạn nhập số lương chưa phù hợp");
+        }
+
+        document.write("số thuế của tiền lương bạn là" + thue + "triệu")
+        document.write("lương thu nhập ròng của bạn là " + luongrong + "triệu")
+
+    }
+
+    tinhluong();
+
+
+</script>
+</body>
+</html>

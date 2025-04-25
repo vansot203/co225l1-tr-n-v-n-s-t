@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tính tổng 2 số</title>
+</head>
+<body>
+<script>
+  let m = prompt("nhập một số nguyên bất kì");
+  let n = prompt("nhập một số nguyên bất kì");
+  function tonghaiso(m,n){
+    let sum = [];
+    let sum2 = 0 ;
+    for (let i = 0 ; i<m;i++){
+      document.write(sum[i].join("'"))
+    }
+    for (let i =0; i<m; i++){
+      for (j=0 ; j <n;j++){
+        if(sum[i][j]%2===0){
+            sum2+=sum[i][j];
+        }
+      }
+    } return sum2
+  }
+  let total = tonghaiso(m,n)
+  alert("tổng 2 số chẵn trong chuỗi là " + total)
+</script>
+</body>
+</html>

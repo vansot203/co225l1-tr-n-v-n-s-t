@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bài 5</title>
+</head>
+<body>
+<script>
+    let tusoinput = prompt("nhập mảng số đầu tiên cách bằng dâu phẩy");
+    let mausoinput = prompt("nhập mảng số thứ 2 cách nhay bằng dấu phẩy");
+    let tuso = tusoinput.split(",").map(Number)
+    let mauso = mausoinput.split(",").map(Number)
+    let index = -1
+    let maxphanso = -Infinity
+    for (let i = 0; i < tuso.length; i++) {
+        let phanso = tuso[i] / mauso[i]
+        if (phanso > maxphanso) {
+            maxphanso = phanso
+            index = i
+        }
+    }
+    alert("chỉ số phân số lớn nhất là " + index)
+</script>
+</body>
+</html>

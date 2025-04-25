@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>đếm kí tự xâu</title>
+</head>
+<body>
+<script>
+  let xau = prompt("nhập chuỗi kí tự muốn đếm")
+  function countUniqueChars(s) {
+    let unique = new Set(s);
+    return unique.size;
+  }
+   let retun = countUniqueChars(xau)
+   alert("số kí tự trong chuỗi xâu là"+retun)
+</script>
+</body>
+</html>

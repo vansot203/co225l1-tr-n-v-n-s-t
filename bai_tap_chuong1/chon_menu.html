@@ -1,0 +1,48 @@
+<!DOCTYPE html>lua
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Menu</title>
+</head>
+<body>
+<script>
+    let menu = [
+        {ten: "cafe", gia: 20000},
+        {ten: "cafe sữa", gia: 28000},
+        {ten: "nước dừa", gia: 23000},
+        {ten: "nước ép cam", gia: 22000},
+        {ten: "bạc sĩu", gia: 25000},
+        {ten: "nước thánh", gia: 25000},
+    ];
+    let tongtien = 0;
+    let luachon;
+    do {
+        let menutext = "chọn đồ uống \n"
+        for (i = 0; i < menu.length; i++) {
+            menutext += `${i + 1}.${menu[i].ten}- ${menu[i].gia} VND\n`
+        }
+        menutext += "7.chọn lại món"
+        luachon = parseInt(prompt(menutext));
+        switch (luachon) {
+            case 1 :
+            case 2 :
+            case 3 :
+            case 4 :
+            case 5 :
+            case 6 :
+                let soluong = parseInt(prompt("bạn đã chọn "+menu[luachon-1].ten + "nhập số lượng"));
+                let thanhtien = menu[luachon - 1].gia * soluong;
+                tongtien += thanhtien;
+                alert  ("bạn đã gọi"+soluong+menu[luachon-1].ten + "thành tiền"+ thanhtien );
+                break
+            case 7 :
+                break;
+            default :
+                alert("lựa chọn chưa hợp  lệ . vui lòng chọn lại");
+
+        }
+    } while (luachon !== 7);
+    alert("tổng số tiền của bạn là " + tongtien + "VND");
+</script>
+</body>
+</html>

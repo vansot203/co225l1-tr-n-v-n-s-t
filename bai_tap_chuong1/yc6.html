@@ -1,0 +1,113 @@
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Bảng Danh Sách</title>
+</head>
+<body>
+<p id="display"></p>
+<script>
+  class Student {
+    constructor(id, name, className, email, dateOfBirth) {
+      this.id = id;
+      this.name = name;
+      this.className = className;
+      this.email = email;
+      this.dateOfBirth = dateOfBirth;
+    }
+  }
+
+  const students = [
+    new Student("A", "Học viên A", "11", "", "11/2/2011"),
+    new Student("B", "Học viên B", "11", "", "11/2/2012"),
+    new Student("C", "Học viên C", "12", "", "11/2/2013"),
+    new Student("D", "Học viên D", "11", "", "11/2/2014")
+  ];
+
+  function display() {
+    let table1 = `<table border="1" style="border-collapse: collapse;">
+                <tr>
+                    <th>Mã học viên</th>
+                    <th>Tên</th>
+                    <th>Lớp</th>
+                    <th>Email</th>
+                    <th>Ngày sinh</th>
+
+                </tr>`;
+
+    for (let i = 0; i < students.length; i++) {
+      table1 += `<tr>
+                    <td>${students[i].id}</td>
+                    <td>${students[i].name}</td>
+                    <td>${students[i].className}</td>
+                    <td>${students[i].email}</td>
+                    <td>${students[i].dateOfBirth}</td>
+
+                </tr>`;
+    }
+
+    table1 += `</table>`;
+    document.getElementById("display").innerHTML = table1;
+  }
+
+  function add() {
+    let id = prompt("Nhập mã sinh viên");
+    let name = prompt("Nhập tên của sinh viên");
+    let classname = prompt("Nhập lớp học của sinh viên");
+    let email = prompt("Nhập email của sinh viên");
+    let dateOfBirth = prompt("Nhập ngày sinh của sinh viên");
+
+    if (id && name && classname && email && dateOfBirth) {
+      let newStudent = new Student(id, name, classname, email, dateOfBirth);
+      students.push(newStudent);
+      display();
+    } else {
+      alert("Bạn đã nhập sai thông tin. Vui lòng nhập lại.");
+    }
+  }
+
+  display();
+  function deleteStudentById() {
+    let deletes = prompt("Nhập ID sinh viên bạn muốn xoá");
+    let index = students.findIndex(student => student.id === deletes);
+
+    if (index !== -1) {
+      let confirmDelete = confirm(`Bạn có chắc muốn xoá sinh viên ${students[index].name}?`);
+      if (confirmDelete) {
+        students.splice(index, 1);
+        alert("Đã xoá thành công.");
+        display();
+      }
+    } else {
+      alert("ID bạn nhập không tồn tại.");
+    }
+  }
+  function editStudentById() {
+    let id = prompt("Nhập ID của học viên bạn muốn sửa:");
+    let index = students.findIndex(student => student.id === id);
+
+    if (index !== -1) {
+      // Gợi ý thông tin cũ khi sửa
+      let name = prompt("Nhập tên mới:", students[index].name);
+      let className = prompt("Nhập lớp mới:", students[index].className);
+      let email = prompt("Nhập email mới:", students[index].email);
+      let dateOfBirth = prompt("Nhập ngày sinh mới:", students[index].dateOfBirth);
+
+      // Cập nhật thông tin
+      students[index].name = name || students[index].name;
+      students[index].className = className || students[index].className;
+      students[index].email = email || students[index].email;
+      students[index].dateOfBirth = dateOfBirth || students[index].dateOfBirth;
+
+      alert("Thông tin học viên đã được cập nhật.");
+      display();
+    } else {
+      alert("Không tìm thấy học viên với ID này.");
+    }
+  }
+</script>
+<button onclick="add()">Thêm học viên mới</button>
+<button onclick="deleteStudentById()" > xoá sinh viên</button>
+<button onclick="editStudentById()">sửa thông tin sinh viên</button>
+</body>
+</html>
