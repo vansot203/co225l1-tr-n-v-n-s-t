@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bài 2</title>
+</head>
+<body>
+<script>
+    let number = parseInt(prompt("Nhập điểm số của học sinh:"));
+
+    if (number < 48) {
+        alert("Điểm số của bạn nhỏ hơn 48 nên không làm tròn: " + number);
+    } else {
+        let boiso5 = Math.ceil(number / 5) * 5;
+        if (boiso5 - number < 3) {
+            number = boiso5;
+            alert("Điểm số của bạn đã được làm tròn thành: " + number);
+        } else {
+            alert("Điểm số của bạn không thay đổi: " + number);
+        }
+    }
+    if (number < 50) {
+        alert("Điểm số của bạn không đạt kỳ thi.");
+    } else {
+        alert("Điểm số của bạn đã đạt kỳ thi.");
+    }
+
+</script>
+</body>
+</html>

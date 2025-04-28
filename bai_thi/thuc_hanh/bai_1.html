@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bài 1</title>
+</head>
+<body>
+<script>
+    let numbers = [];
+    let n = parseInt(prompt("Nhập số lượng phần tử của mảng (không quá 20):"));
+
+
+    if (n > 20 || n <= 0) {
+        alert("Số lượng phần tử không hợp lệ!");
+    } else {
+        for (let i = 0; i < n; i++) {
+            let num = parseInt(prompt(`Nhập phần tử thứ ${i + 1}:`));
+            numbers.push(num);
+        }
+        let multiples = [];
+        let sum = 0;
+        for (let i = 0; i < numbers.length; i++) {
+            if (numbers[i] % 15 === 0) {
+                multiples.push(numbers[i]);
+                sum += numbers[i];
+            }
+        }
+        if (multiples.length > 0) {
+            alert("Các số là bội chung của 3 và 5: " + multiples.join(", "));
+            alert("Tổng các số đó là: " + sum);
+        } else {
+            alert("Không có số nào là bội chung của 3 và 5 trong mảng.");
+        }
+    }
+</script>
+</body>
+</html>

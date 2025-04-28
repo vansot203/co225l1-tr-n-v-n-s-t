@@ -1,0 +1,75 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Danh sách khách hàng</title>
+</head>
+<body>
+
+<h2>Danh sách khách hàng</h2>
+
+<label>Mã khách hàng</label><br>
+<input type="text" id="makhachhang"><br>
+
+<label>Tên khách hàng</label><br>
+<input type="text" id="name"><br>
+
+<label>Số điện thoại</label><br>
+<input type="text" id="phone"><br>
+
+<label>Địa chỉ</label><br>
+<input type="text" id="address"><br>
+
+<label>Email</label><br>
+<input type="text" id="email"><br><br>
+
+<button onclick="addContact()">Thêm khách hàng</button>
+
+<h3>Danh sách:</h3>
+<ul id="contactList"></ul>
+
+<script>
+    let contacts = [];
+
+    function addContact() {
+        let id = document.getElementById("makhachhang").value;
+        let name = document.getElementById("name").value;
+        let phone = document.getElementById("phone").value;
+        let address = document.getElementById("address").value;
+        let email = document.getElementById("email").value;
+
+        if (!id || !name || !phone || !address || !email) {
+            alert("Vui lòng nhập đầy đủ thông tin!");
+            return;
+        }
+
+        contacts.push({ id, name, phone, address, email });
+        showContacts();
+
+        document.getElementById("makhachhang").value = "";
+        document.getElementById("name").value = "";
+        document.getElementById("phone").value = "";
+        document.getElementById("address").value = "";
+        document.getElementById("email").value = "";
+    }
+
+    function showContacts() {
+        let list = document.getElementById("contactList");
+        list.innerHTML = "";
+
+        contacts.forEach((c, index) => {
+            list.innerHTML += `<li>
+                ${c.id} - ${c.name} - ${c.phone} - ${c.address} - ${c.email}
+                <button onclick="deleteContact(${index})">Xoá</button>
+            </li>`;
+        });
+    }
+
+    function deleteContact(index) {
+        contacts.splice(index, 1);
+        showContacts();
+    }
+</script>
+
+</body>
+</html>

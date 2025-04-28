@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bài 3</title>
+</head>
+<body>
+<script>
+  let n = parseInt(prompt("Nhập số lượng phần tử của mảng (không quá 50):"));
+  if (n > 50 || n <= 0) {
+    alert("Số lượng phần tử không hợp lệ!");
+  } else {
+    let numbers = [];
+    for (let i = 0; i < n; i++) {
+      let num = parseInt(prompt(`Nhập phần tử thứ ${i + 1}:`));
+      numbers.push(num);
+    }
+  }
+</script>
+</body>
+</html>
